@@ -1,5 +1,9 @@
 <template>
-  <div>
-    Hi from <span class="italic">Products.vue</span>
-  </div>
+	<DefaultLayout> Products </DefaultLayout>
 </template>
+
+<script setup>
+import DefaultLayout from "~/components/DefaultLayout.vue";
+</script>
+
+<style lang="scss" scoped></style>

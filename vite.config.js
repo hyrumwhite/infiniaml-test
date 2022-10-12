@@ -1,25 +1,18 @@
-import { defineConfig } from "vite";
-import { createVuePlugin as vue } from "vite-plugin-vue2";
-import path from "path";
 import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+export const __dirname = dirname(__filename);
 
-const filename = fileURLToPath(import.meta.url);
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
 
-const dirname = path.dirname(filename);
-
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      // eslint-disable-next-line no-undef
-      "@": path.resolve(dirname, "./src"),
-    },
-  },
-  lintOnSave: true,
-  build: {
-    commonjsOptions: {
-      transformMixedEsModules: true,
-      exclude: ["node_modules/lodash-es/**"],
-    },
-  },
+	plugins: [vue()],
+	resolve: {
+		alias: {
+			"~": resolve(__dirname, "./src"),
+		},
+	},
 });

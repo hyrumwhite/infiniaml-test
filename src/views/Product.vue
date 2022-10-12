@@ -1,5 +1,5 @@
 <template>
-	<DefaultLayout> Home page </DefaultLayout>
+	<DefaultLayout> Product page </DefaultLayout>
 </template>
 
 <script setup>
